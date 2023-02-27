@@ -1,16 +1,10 @@
-// Remember to import the data and Dog class!
 /////////////////////////////////////////////////////////////
 //                  VARIABLES
 /////////////////////////////////////////////////////////////
 
 import dogs from "/data.js"
 import Dog from "/Dog.js"
-// console.log(dogs)
-const rex = new Dog(dogs[0]);
-const bella = new Dog(dogs[1]);
-const teddy = new Dog(dogs[2]);
-console.log(teddy.getName());
-const badge = document.getElementById("badge");
+import { handleAccepted, handleRejected } from "/utils.js"
 
 /////////////////////////////////////////////////////////////
 //                  FUNCTIONS
@@ -18,9 +12,9 @@ const badge = document.getElementById("badge");
 
 function handleClick(e) {
     if (e.target.id === "reject-btn") {
-        showBadge("/images/badge-nope.png")
+        handleRejected();
     } else if (e.target.id === "accept-btn") {
-        showBadge("/images/badge-like.png")
+        handleAccepted();
     } else if (e.target.id === "profile-btn") {
         alert("profile")
     } else if (e.target.id === "logo-btn") {
@@ -30,28 +24,11 @@ function handleClick(e) {
     }
 }
 
-function showBadge(path) {
-    badge.src = path;
-    badge.classList.remove("hidden");
-    setTimeout(() => badge.classList.add("hidden"), 3000);
+function render(string) {
+    document.getElementById("profile").innerHTML = string;
 }
 
-function profile(data) {
-    const { age, avatar, bio, name } = data
-    return `
-            <img class="profile-img" src="/${avatar}" alt="${name} profile image" />
-            <div class="profile-info">
-                <p class="profile-info-title">${name}, ${age}</p>
-                <p>${bio}</p>
-            </div>
-    `
-}
-
-function render() {
-    document.getElementById("profile").innerHTML = profile(dogs[1]);
-}
-
-render();
+render(new Dog(dogs[2]).getProfileHtml());
 
 /////////////////////////////////////////////////////////////
 //                  EVENTLISTENERS
