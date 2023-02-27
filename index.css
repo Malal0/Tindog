@@ -122,3 +122,7 @@ button img {
 .action-btn.reject:hover {
     background-color: #FFE7EF;
 }
+
+.hidden {
+    display: none;
+}

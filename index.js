@@ -3,18 +3,28 @@
 //                  VARIABLES
 /////////////////////////////////////////////////////////////
 
-
+const badge = document.getElementById("badge");
 
 /////////////////////////////////////////////////////////////
 //                  FUNCTIONS
 /////////////////////////////////////////////////////////////
 
-function logTarget(e) {
-    console.log(e.target)
+function handleClick(e) {
+    if (e.target.id === "reject-btn") {
+        showBadge("/images/badge-nope.png")
+    } else if (e.target.id === "accept-btn") {
+        showBadge("/images/badge-like.png")
+    }
+}
+
+function showBadge(path) {
+    badge.src = path;
+    badge.classList.remove("hidden");
+    setTimeout(() => badge.classList.add("hidden"), 4000)
 }
 
 /////////////////////////////////////////////////////////////
 //                  EVENTLISTENERS
 /////////////////////////////////////////////////////////////
 
-document.addEventListener("click", logTarget);
+document.addEventListener("click", handleClick);
