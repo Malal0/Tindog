@@ -62,16 +62,21 @@ button img {
 
 /*      PROFILE         */
 
-.profile {
+.profile-section {
     display: grid;
     grid-template-rows: auto;
     overflow: hidden;
     padding: 0 1.25em;
 }
 
+.profile {
+    display: grid;
+}
+
+.profile,
+.badge,
 .profile-img,
-.profile-info,
-.badge {
+.profile-info {
     grid-row: 1 / -1;
     grid-column: 1 / -1;
 }
@@ -95,7 +100,8 @@ button img {
 
 .badge {
     width: 12.5em;
-    transform: rotate(-30deg) translateY(50px) translateX(-10px);
+    transform: rotate(-30deg);
+    margin: 48px 15px;
 }
 
 /*      ACTION BTNS         */
