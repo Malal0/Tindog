@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+}
+
+body {
+    background-color: #F6F7FB;
+    background-image: linear-gradient(white, #F6F7FB);
+}
+
+nav {
+    background-color: white;
+}
