@@ -5,13 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <title>Tindog</title>
     <link href="/index.css" rel="stylesheet" />
+    <script src="/index.js" type="module" defer></script>
 </head>
 
 <body>
     <header>
-        <nav>
+        <nav class="nav">
             <button class="nav-btn">
                 <img class="nav-btn-img" src="/images/icon-profile.png" alt="user-profile" />
             </button>
@@ -24,25 +28,19 @@
         </nav>
     </header>
     <main>
-        <!--profile-->
-        <!--profile img-->
-        <!--profile Info-->
-        <!--profile bio-->
         <section class="profile">
             <img class="profile-img" src="/images/dog-teddy.jpg" alt="profile image" />
             <div class="profile-info">
-                <p>Carvin, 24</p>
+                <p class="profile-info-title">Carvin, 24</p>
                 <p>Likes to cook and fight</p>
             </div>
+            <!-- <img class="badge" src="/images/badge-nope.png" alt="profile image" /> -->
         </section>
-        <!--buttons-->
-        <!--reject btn-->
-        <!--heart btn-->
         <section class="action-btns">
-            <button class="action-btn">
+            <button class="action-btn reject" id="reject-btn">
                 <img class="action-btn-img" src="/images/icon-cross.png" alt="user-profile" />
             </button>
-            <button class="action-btn">
+            <button class="action-btn accept" id="accept-btn">
                 <img class="action-btn-img" src="/images/icon-heart.png" alt="user-profile" />
             </button>
         </section>
