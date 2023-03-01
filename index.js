@@ -93,7 +93,7 @@ function reset() {
     acceptBtn.classList.remove("hidden");
 }
 
-render(currentDog.getProfileHtml());
+// render(currentDog.getProfileHtml());
 
 /////////////////////////////////////////////////////////////
 //                  EVENTLISTENERS
