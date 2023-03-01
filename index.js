@@ -77,10 +77,8 @@ function handleDecision(e, acceptBtn, rejectBtn) {
 
     setTimeout(() => {
         currentDog.setSwiped();
-        console.log(dog);
         currentDog = getNextDog()
-        console.log(nextDog);
-        render(nextDog.getProfileHtml())
+        render(currentDog.getProfileHtml())
         acceptBtn.disabled = false;
         rejectBtn.disabled = false;
     }, 1000)
@@ -93,7 +91,7 @@ function reset() {
     acceptBtn.classList.remove("hidden");
 }
 
-// render(currentDog.getProfileHtml());
+render(currentDog.getProfileHtml());
 
 /////////////////////////////////////////////////////////////
 //                  EVENTLISTENERS

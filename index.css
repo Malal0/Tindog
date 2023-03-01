@@ -89,13 +89,14 @@ button img {
 
 .profile-img {
     border-radius: 1em;
-    height: calc(100vh - 242px);
+    height: calc(100vh - 244px);
 }
 
 .profile-info {
     align-self: self-end;
     color: #B7B7B7;
-    padding: 1em;
+    padding: 10em 1em 1em 1em;
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.25) 70%);
 }
 
 .profile-info-title {
@@ -137,4 +138,27 @@ button img {
 
 .hidden {
     display: none;
+}
+
+.placeholder {
+    background-color: #B7B7B7;
+    border-radius: 1em;
+    height: calc(100vh - 242px);
+    width: 100%;
+}
+
+.no-more-container {
+    height: calc(100vh - 242px);
+    display: grid;
+    place-items: center;
+}
+
+.reset-btn {
+    width: 25em;
+    background-color: transparent;
+    border: none;
+}
+
+.reset-btn-img {
+    opacity: .1;
 }
