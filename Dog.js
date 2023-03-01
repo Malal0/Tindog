@@ -4,8 +4,9 @@ class Dog {
         Object.assign(this, data)
         this.matches = 0
     }
-    getName() {
-        return this.name
+
+    setSwiped() {
+        this.hasBeenSwiped = true
     }
 
     setLiked() {

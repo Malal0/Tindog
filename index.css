@@ -10,12 +10,19 @@
 html,
 body {
     font-family: 'Poppins', sans-serif;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 body {
     background-color: #F6F7FB;
     background-image: linear-gradient(white, #F6F7FB);
+    display: grid;
+    grid-template-rows: 82px auto;
+    height: 100vh;
+}
+
+header {
+    height: 82px;
 }
 
 nav {
@@ -60,17 +67,36 @@ button img {
     object-fit: cover;
 }
 
+/*      MAIN         */
+
+.main {
+    height: calc(100vh - 82px);
+    display: grid;
+    grid-template-rows: auto 160px;
+}
+
+.profile-section {
+    height: 100%;
+}
+
+.action-btns {}
+
 /*      PROFILE         */
 
 .profile-section {
     display: grid;
-    grid-template-rows: auto;
+    grid-template-rows: 100%;
     overflow: hidden;
     padding: 0 1.25em;
+    height: 100%;
+    grid-row: 1;
 }
 
 .profile {
     display: grid;
+    height: 100%;
+    width: clamp(300px, 100%, 600px);
+    margin: 0 auto;
 }
 
 .profile,
@@ -83,7 +109,9 @@ button img {
 
 .profile-img {
     border-radius: 1em;
-    height: calc(100vh - 242px);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .profile-info {
@@ -131,4 +159,20 @@ button img {
 
 .hidden {
     display: none;
+}
+
+.no-more-container {
+    height: calc(100vh - 242px);
+    display: grid;
+    place-items: center;
+}
+
+.reset-btn {
+    width: 25em;
+    background-color: transparent;
+    border: none;
+}
+
+.reset-btn-img {
+    opacity: .1;
 }
