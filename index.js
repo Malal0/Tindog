@@ -24,13 +24,7 @@ let currentDog = getNextDog()
 
 function handleClick(e) {
     if (e.target === rejectBtn || e.target === acceptBtn) {
-        if (dogNamesArray.length) {
-            handleDecision(e, acceptBtn, rejectBtn);
-        } else {
-            render(noMoreDogsHtml);
-            rejectBtn.classList.add("hidden");
-            acceptBtn.classList.add("hidden");
-        }
+        handleDecision(e, acceptBtn, rejectBtn);
     } else if (e.target.id === "profile-btn") {
         alert("profile")
     } else if (e.target.id === "logo-btn") {
@@ -70,18 +64,24 @@ function handleDecision(e, acceptBtn, rejectBtn) {
     } else if (e.target === rejectBtn) {
         showBadge("/images/badge-nope.png", 1000)
     }
+    if (dogNamesArray.length) {
+        acceptBtn.disabled = true;
+        rejectBtn.disabled = true;
 
-
-    acceptBtn.disabled = true;
-    rejectBtn.disabled = true;
-
-    setTimeout(() => {
-        currentDog.setSwiped();
-        currentDog = getNextDog()
-        render(currentDog.getProfileHtml())
-        acceptBtn.disabled = false;
-        rejectBtn.disabled = false;
-    }, 1000)
+        setTimeout(() => {
+            currentDog.setSwiped();
+            currentDog = getNextDog()
+            render(currentDog.getProfileHtml())
+            acceptBtn.disabled = false;
+            rejectBtn.disabled = false;
+        }, 1000)
+    } else {
+        setTimeout(() => {
+            render(noMoreDogsHtml);
+            rejectBtn.classList.add("hidden");
+            acceptBtn.classList.add("hidden");
+        }, 1000)
+    }
 }
 
 function reset() {
