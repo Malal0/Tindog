@@ -18,6 +18,12 @@ body {
     background-image: linear-gradient(white, #F6F7FB);
 }
 
+header,
+.main {
+    width: clamp(300px, 95%, 720px);
+    margin: 0 auto;
+}
+
 nav {
     background-color: white;
 }
