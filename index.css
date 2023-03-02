@@ -159,7 +159,7 @@ button img {
 }
 
 .reset-btn {
-    width: clamp(10em, 50%, 20em);
+    width: clamp(10em, 50%, 19em);
     height: clamp(10em, 50%, 20em);
     background-color: transparent;
     border: none;
