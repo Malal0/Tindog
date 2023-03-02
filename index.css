@@ -71,7 +71,6 @@ button img {
 .profile-section {
     display: grid;
     grid-template-rows: auto;
-    overflow: hidden;
     padding: 0 1.25em;
 }
 
@@ -160,7 +159,8 @@ button img {
 }
 
 .reset-btn {
-    width: 25em;
+    width: clamp(10em, 50%, 20em);
+    height: clamp(10em, 50%, 20em);
     background-color: transparent;
     border: none;
 }
