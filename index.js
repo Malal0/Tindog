@@ -4,8 +4,6 @@
 
 import dogs from "/data.js"
 import Dog from "/Dog.js"
-// import { handleAccepted, handleRejected } from "/utils.js"
-// import { handleDecision, render } from "/utils.js"
 let dogNamesArray = dogs.map(dog => dog.name);
 const rejectBtn = document.getElementById("reject-btn");
 const acceptBtn = document.getElementById("accept-btn");
@@ -85,7 +83,17 @@ function handleDecision(e, acceptBtn, rejectBtn) {
 }
 
 function reset() {
-    dogNamesArray = dogs.map(dog => dog.name);
+    // dogs.map(dog => {
+    //     dog.hasBeenLiked = false;
+    //     dog.hasBeenSwiped = false;
+    // })
+    // not sure if I should seperate this map ⬆ and the other map ⬇
+    // dogNamesArray = dogs.map(dog => dog.name);
+    dogNamesArray = dogs.map(dog => {
+        dog.hasBeenLiked = false;
+        dog.hasBeenSwiped = false;
+        return dog.name
+    });
     render(getNextDog().getProfileHtml());
     rejectBtn.classList.remove("hidden");
     acceptBtn.classList.remove("hidden");
