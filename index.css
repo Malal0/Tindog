@@ -154,6 +154,11 @@ button img {
     place-items: center;
 }
 
+.no-more-txt {
+    color: #B7B7B7;
+    font-size: 1.25rem;
+}
+
 .reset-btn {
     width: 25em;
     background-color: transparent;

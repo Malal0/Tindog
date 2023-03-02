@@ -33,13 +33,14 @@
                 <!--Profile-->
                 <div class="placeholder"></div>
             </div>
-            <img class="badge hidden" src="/images/badge-like.png" alt="profile image" id="badge" />
+            <img class="badge hidden" src="/images/badge-like.png" alt="profile image" id="like-badge" />
+            <img class="badge hidden" src="/images/badge-nope.png" alt="profile image" id="nope-badge" />
         </section>
         <section class="action-btns">
-            <button class="action-btn reject" id="reject-btn">
+            <button class="action-btn reject" id="reject-btn" data-badge="nope-badge">
                 <img class="action-btn-img" src="/images/icon-cross.png" alt="user-profile" />
             </button>
-            <button class="action-btn accept" id="accept-btn">
+            <button class="action-btn accept" id="accept-btn" data-badge="like-badge">
                 <img class="action-btn-img" src="/images/icon-heart.png" alt="user-profile" />
             </button>
         </section>

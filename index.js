@@ -7,17 +7,18 @@ import Dog from "/Dog.js"
 // import { handleAccepted, handleRejected } from "/utils.js"
 // import { handleDecision, render } from "/utils.js"
 let dogNamesArray = dogs.map(dog => dog.name);
-const rejectBtn = document.getElementById("reject-btn")
-const acceptBtn = document.getElementById("accept-btn")
+const rejectBtn = document.getElementById("reject-btn");
+const acceptBtn = document.getElementById("accept-btn");
 const noMoreDogsHtml = `
                 <div class="no-more-container">
-                    <h1>No More Dogs</h1>
+                    <p class="no-more-txt">No More Dogs</p>
                     <button class="reset-btn" id="reset-btn">
                         <img class="reset-btn-img" src="https://img.icons8.com/ios-glyphs/256/dog-sit.png" alt="dog logo"/>
-                    </button>
+                        </button>
+                    <p class="no-more-txt">click the dog to restart</p>
                 </div>
-            `
-let currentDog = getNextDog()
+            `;
+let currentDog = getNextDog();
 /////////////////////////////////////////////////////////////
 //                  FUNCTIONS
 /////////////////////////////////////////////////////////////
@@ -46,9 +47,8 @@ function getDogObject(name) {
     return dogs.filter(dog => dog.name === name)[0]
 }
 
-function showBadge(path, wait) {
-    const badge = document.getElementById("badge");
-    badge.src = path;
+function showBadge(e, wait) {
+    const badge = document.getElementById(`${e.target.dataset.badge}`);
     badge.classList.remove("hidden");
     setTimeout(() => badge.classList.add("hidden"), wait);
 }
@@ -58,34 +58,34 @@ function render(string) {
 }
 
 function handleDecision(e, acceptBtn, rejectBtn) {
+    showBadge(e, 2000);
+    currentDog.setSwiped();
     if (e.target === acceptBtn) {
-        showBadge("/images/badge-like.png", 1000)
         currentDog.setLiked();
-    } else if (e.target === rejectBtn) {
-        showBadge("/images/badge-nope.png", 1000)
     }
+    console.log(currentDog);
     if (dogNamesArray.length) {
         acceptBtn.disabled = true;
         rejectBtn.disabled = true;
 
         setTimeout(() => {
-            currentDog.setSwiped();
-            currentDog = getNextDog()
-            render(currentDog.getProfileHtml())
+            currentDog = getNextDog();
+            render(currentDog.getProfileHtml());
+            // console.log(currentDog);
             acceptBtn.disabled = false;
             rejectBtn.disabled = false;
-        }, 1000)
+        }, 2000);
     } else {
         setTimeout(() => {
             render(noMoreDogsHtml);
             rejectBtn.classList.add("hidden");
             acceptBtn.classList.add("hidden");
-        }, 1000)
+        }, 2000);
     }
 }
 
 function reset() {
-    dogNamesArray = dogs.map(dog => dog.name)
+    dogNamesArray = dogs.map(dog => dog.name);
     render(getNextDog().getProfileHtml());
     rejectBtn.classList.remove("hidden");
     acceptBtn.classList.remove("hidden");
