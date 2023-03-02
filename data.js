@@ -33,7 +33,7 @@ const dogs = [
     {
         name: "Teddy",
         avatar: "images/dog-teddy.jpg",
-        age: 30,
+        age: 5,
         bio: "How you doin?",
         hasBeenSwiped: false,
         hasBeenLiked: false
